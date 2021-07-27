@@ -1,0 +1,24 @@
+#!/usr/bin/make -f
+
+ROOT_DIR:=$(shell pwd)
+export DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
+export DEB_HOST_ARCH ?= $(shell dpkg-architecture -qDEB_HOST_ARCH)
+export INSTALL_PATH=$(CURDIR)/debian/tmp/
+
+%:
+	dh $@ --parallel
+
+override_dh_auto_configure:
+override_dh_auto_test:
+
+override_dh_auto_clean:
+	$(MAKE) clean
+
+override_dh_auto_build:
+	$(MAKE) 
+
+override_dh_auto_install:
+	$(MAKE) install INSTALLOWNER='' DESTDIR=$(INSTALL_PATH)
+
+override_dh_install:
+	dh_install --sourcedir=$(INSTALL_PATH) --list-missing

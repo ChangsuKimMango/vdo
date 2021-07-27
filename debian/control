@@ -1,0 +1,13 @@
+Source: vdo
+Section: utils
+Priority: optional
+Maintainer: Changsu Kim <kcs930112@gmail.com>
+Build-Depends: debhelper (>= 9), gcc, uuid-dev, libdevmapper-dev, libblkid-dev
+Standards-Version: 3.9.6
+Homepage: https://github.com/MangoBoost/vdo
+
+Package: vdo
+Architecture: any
+Multi-Arch: same
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: CLI tools for VDO management.

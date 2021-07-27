@@ -1,0 +1,15 @@
+/usr/bin/vdo
+/usr/bin/vdoaudit
+/usr/bin/vdo-by-dev
+/usr/bin/vdodebugmetadata
+/usr/bin/vdodmeventd
+/usr/bin/vdodumpblockmap
+/usr/bin/vdodumpconfig
+/usr/bin/vdodumpmetadata
+/usr/bin/vdoforcerebuild
+/usr/bin/vdoformat
+/usr/bin/vdolistmetadata
+/usr/bin/vdoreadonly
+/usr/bin/vdoregenerategeometry
+/usr/bin/vdosetuuid
+/usr/bin/vdostats
