@@ -1,25 +1,25 @@
 name: pr-checker-build
 
 on:
-pull_request:
-branches: [ mango ]
+  pull_request:
+    branches: [ mango ]
 
 env:
-PACKAGES: gcc devscripts debhelper libglib2.0-dev libhugetlbfs-dev uuid-dev libdevmapper-dev libblkid-dev
-
+  PACKAGES: gcc devscripts debhelper libglib2.0-dev libhugetlbfs-dev uuid-dev libdevmapper-dev libblkid-dev
+  
 defaults:
-	run:
-		shell: bash
+  run:
+    shell: bash
 
 jobs:
-	build-bionic:
-		runs-on: ubuntu-18.04
-		steps:
-			- uses: actions/checkout@v2
-			- name: install mandatory packages
-				run: |
-					sudo apt-get -y install $PACKAGES
-			- name: build source codes
-					run: |
-						debuild -us -uc
+  build-bionic:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: install mandatory packages
+        run: |
+            sudo apt-get -y install $PACKAGES
+      - name: build source codes
+        run: |
+            debuild -us -uc
 
